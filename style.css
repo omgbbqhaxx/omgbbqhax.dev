@@ -257,3 +257,4 @@ img { height: auto; }
 .c-flooor .visual img.goggles { width: 78%; max-width: 400px; mix-blend-mode: normal; -webkit-mask-image: none; mask-image: none; border-radius: 22px; box-shadow: 0 2px 0 rgba(255,255,255,.4) inset, 0 30px 60px -20px rgba(237,43,43,.55), 0 12px 24px -12px rgba(0,0,0,.35); transform: rotate(-4deg); }
 .c-flooor:hover .visual img.goggles { transform: rotate(0deg) scale(1.04); }
 .stats strong.sm { font-size: clamp(22px, 2.6vw, 32px); white-space: nowrap; padding-top: 4px; }
+.c-flooor .visual img.goggles { border-radius: 0; box-shadow: 0 30px 60px -20px rgba(237,43,43,.55), 0 12px 24px -12px rgba(0,0,0,.35); }
