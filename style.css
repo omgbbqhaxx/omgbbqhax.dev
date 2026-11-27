@@ -260,3 +260,4 @@ img { height: auto; }
 .c-flooor .visual img.goggles { border-radius: 0; box-shadow: 0 30px 60px -20px rgba(237,43,43,.55), 0 12px 24px -12px rgba(0,0,0,.35); }
 .brand-mark { background: none !important; box-shadow: 0 4px 14px -4px rgba(168,85,247,.6) !important; border-radius: 9px; }
 .brand-mark { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 4px 16px -4px rgba(168,85,247,.55) !important; }
+.brand-mark { width: auto !important; height: 32px !important; border-radius: 0 !important; box-shadow: none !important; background: none !important; }
