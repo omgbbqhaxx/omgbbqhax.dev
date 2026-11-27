@@ -4,14 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OMGBBQHAX — Independent games &amp; software studio</title>
-<meta name="description" content="OMGBBQHAX is an independent studio building mobile games, web apps and physical products — including Bitfight for iPhone, flooor.fun and BBlock.">
+<meta name="description" content="OMGBBQHAX LLC is an independent studio building mobile games, web apps and physical products, including Bitfight for iPhone, flooor.fun and BBlock.">
 <meta property="og:title" content="OMGBBQHAX — Independent games & software studio">
 <meta property="og:description" content="Makers of Bitfight, flooor.fun and BBlock.">
 <meta property="og:url" content="https://omgbbqhax.dev/">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0a0f">
 <link rel="canonical" href="https://omgbbqhax.dev/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,8 +31,8 @@
 }
 </script>
 </head>
-<body>
-<header class="site-header">
+<body class="home">
+<header class="site-header" id="header">
   <div class="container header-inner">
     <a class="brand" href="/"><span class="brand-mark">O</span>OMGBBQHAX</a>
     <nav class="nav" aria-label="Main">
@@ -43,119 +45,165 @@
 </header>
 
 <main>
+  <!-- hero -->
   <section class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
     <div class="container">
-      <span class="eyebrow">Independent studio</span>
-      <h1>We build games, apps and things people actually use.</h1>
-      <p class="lead">OMGBBQHAX LLC is a small independent studio behind the Bitfight mobile game, the flooor.fun web market and the BBlock building system.</p>
+      <span class="pill"><span class="dot"></span>Independent studio · Delaware, USA</span>
+      <h1>Games, apps and things<br>people <span class="grad">love to use.</span></h1>
+      <p class="lead">OMGBBQHAX is a small independent studio. We design, build and support every product ourselves: from a competitive iPhone game to a live web marketplace and a new way to build walls.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#products">See our products</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        <a class="btn btn-glow" href="#products">Explore our products</a>
+        <a class="btn btn-ghost-dark" href="#contact">Get in touch</a>
+      </div>
+
+      <div class="makers">
+        <span>Makers of</span>
+        <ul>
+          <li><a href="#bitfight"><img src="assets/bitfight-icon.png" alt="" width="34" height="34">Bitfight</a></li>
+          <li><a href="#flooor"><img src="assets/flooor-icon.png" alt="" width="34" height="34">flooor.fun</a></li>
+          <li><a href="#bblock"><img class="contain" src="assets/bblock-logo.png" alt="" width="34" height="34">BBlock</a></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="products">
+  <!-- stats -->
+  <section class="stats" aria-label="Studio at a glance">
     <div class="container">
-      <div class="section-head">
+      <ul>
+        <li class="reveal"><strong>3</strong><span>Products shipped</span></li>
+        <li class="reveal"><strong>2023</strong><span>First App Store launch</span></li>
+        <li class="reveal"><strong>iOS · Web</strong><span>and physical goods</span></li>
+        <li class="reveal"><strong>&lt; 2 days</strong><span>Support response</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- products -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-head reveal">
         <span class="eyebrow">Products</span>
         <h2>What we make</h2>
-        <p>Each product is designed, built and supported in-house by our team.</p>
+        <p>Three very different products, one small team that designs, builds and supports each of them in-house.</p>
       </div>
 
-      <div class="products">
-        <article class="product" id="bitfight">
-          <div>
-            <div class="product-head">
-              <img class="product-icon" src="assets/bitfight-icon.png" alt="Bitfight app icon" width="64" height="64">
-              <div><h3>Bitfight</h3><span class="kind">Puzzle game · iPhone</span></div>
+      <div class="bento">
+        <article class="card c-bitfight reveal" id="bitfight">
+          <div class="card-body">
+            <div class="tagrow">
+              <img src="assets/bitfight-icon.png" alt="Bitfight app icon" width="48" height="48">
+              <span class="chip">iPhone game · Free</span>
             </div>
+            <h3>Bitfight</h3>
             <p>A colorful competitive block puzzle. Four colors, four powers and one grid between you and your rival. Stack, chain and blast your way to victory in quick one-on-one matches.</p>
-            <ul>
-              <li>Free to play on iPhone</li>
-              <li>1v1 battles with Game Center</li>
+            <ul class="feat">
+              <li>1v1 battles via Game Center</li>
+              <li>Attack · Heal · Boost · Disrupt</li>
               <li>Easy to learn, hard to master</li>
             </ul>
-            <div class="product-links">
-              <a class="btn btn-primary" href="https://apps.apple.com/app/bitfight/id6449154006" target="_blank" rel="noopener">App Store</a>
-              <a class="btn btn-ghost" href="support.html#bitfight">Support</a>
-              <a class="btn btn-ghost" href="privacy.html#bitfight">Privacy</a>
+            <div class="actions">
+              <a class="btn btn-glow" href="https://apps.apple.com/app/bitfight/id6449154006" target="_blank" rel="noopener">Download on the App Store</a>
+              <a class="btn btn-ghost-dark" href="support.html#bitfight">Support</a>
+              <a class="btn btn-ghost-dark" href="privacy.html#bitfight">Privacy</a>
             </div>
           </div>
-          <div class="product-visual v-bitfight"><img src="assets/bitfight-screen.jpg" alt="Bitfight gameplay on iPhone" width="497" height="1000"></div>
+          <div class="visual" aria-hidden="true">
+            <span class="blk r"></span><span class="blk g"></span><span class="blk y"></span><span class="blk b"></span>
+            <img src="assets/bitfight-screen.jpg" alt="" width="497" height="1000">
+          </div>
         </article>
 
-        <article class="product" id="flooor">
-          <div>
-            <div class="product-head">
-              <img class="product-icon" src="assets/flooor-icon.png" alt="flooor.fun icon" width="64" height="64">
-              <div><h3>flooor.fun</h3><span class="kind">Web app · Base</span></div>
+        <article class="card c-flooor reveal" id="flooor">
+          <div class="card-body">
+            <div class="tagrow">
+              <img src="assets/flooor-icon.png" alt="flooor.fun icon" width="48" height="48">
+              <span class="chip">Web app · Base</span>
             </div>
-            <p>A live marketplace on the Base network. Collectors can bid on the floor, sell instantly, and holders who sign in daily share in the rewards generated by every sale.</p>
-            <ul>
-              <li>Live floor bids and instant sales</li>
-              <li>Daily sign-in rewards for holders</li>
-              <li>Self-custody: users keep control of their own wallet</li>
+            <h3>flooor.fun</h3>
+            <p>A live marketplace on Base. Bid on the floor, sell instantly, and as a holder who signs in daily, share in the rewards from every sale.</p>
+            <ul class="feat">
+              <li>Live floor bids</li>
+              <li>Instant sales</li>
+              <li>Self-custody</li>
             </ul>
-            <div class="product-links">
-              <a class="btn btn-primary" href="https://flooor.fun" target="_blank" rel="noopener">Visit flooor.fun</a>
-              <a class="btn btn-ghost" href="support.html#flooor">Support</a>
-              <a class="btn btn-ghost" href="privacy.html#flooor">Privacy</a>
+            <div class="actions">
+              <a class="btn btn-primary btn-sm" href="https://flooor.fun" target="_blank" rel="noopener">Visit flooor.fun</a>
+              <a class="btn btn-ghost btn-sm" href="support.html#flooor">Support</a>
+              <a class="btn btn-ghost btn-sm" href="privacy.html#flooor">Privacy</a>
             </div>
           </div>
-          <div class="product-visual v-flooor"><img src="assets/flooor-icon.png" alt="flooor.fun logo" width="120" height="120"></div>
+          <div class="visual" aria-hidden="true"><img src="assets/flooor-glasses.jpg" alt="" width="520" height="250"></div>
         </article>
 
-        <article class="product" id="bblock">
-          <div>
-            <div class="product-head">
-              <img class="product-icon" src="assets/bblock-logo.png" alt="BBlock logo" width="64" height="64">
-              <div><h3>BBlock</h3><span class="kind">Building system · block-chain.world</span></div>
+        <article class="card c-bblock reveal" id="bblock">
+          <div class="bg" aria-hidden="true"><img src="assets/bblock-house.jpg" alt="" width="1045" height="1400" loading="lazy"></div>
+          <div class="mold" aria-hidden="true"><img src="assets/bblock-mold.jpg" alt="" width="900" height="900" loading="lazy"><small>BBlock mold</small></div>
+          <div class="card-body">
+            <div class="tagrow">
+              <img src="assets/bblock-logo.png" alt="BBlock logo" width="48" height="48">
+              <span class="chip">Building system</span>
             </div>
-            <p>A single-component interlocking concrete brick system. Bricks stack dry without mortar, rotate 90° for clean corners and are reinforced with steel rods. Cast with our 3D-printed molds.</p>
-            <ul>
-              <li>No mortar required</li>
-              <li>One brick shape for walls and corners</li>
-              <li>Ideal for garden walls, planters and small structures</li>
-            </ul>
-            <div class="product-links">
-              <a class="btn btn-primary" href="https://block-chain.world" target="_blank" rel="noopener">Visit BBlock</a>
-              <a class="btn btn-ghost" href="support.html#bblock">Support</a>
+            <h3>BBlock</h3>
+            <p>One interlocking concrete brick. No mortar, perfect 90° corners and steel-rod reinforcement. Cast your own with our 3D-printed molds.</p>
+            <div class="actions">
+              <a class="btn btn-glow btn-sm" href="https://block-chain.world" target="_blank" rel="noopener">Visit BBlock</a>
+              <a class="btn btn-ghost btn-sm" href="support.html#bblock">Support</a>
             </div>
           </div>
-          <div class="product-visual v-bblock"><img src="assets/bblock-logo.png" alt="BBlock logo" width="150" height="150"></div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section" id="about">
+  <!-- about -->
+  <section class="section section-alt" id="about">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="eyebrow">About us</span>
-        <h2>Small team, real products</h2>
-        <p>We design, develop and run our own products end to end, from game design and engineering to customer support. We keep our products simple, fair and respectful of the people who use them.</p>
+        <h2>Small team.<br>Real products.</h2>
+        <p>We run every product end to end, from design and engineering to customer support. We keep things simple, fair and respectful of the people who use them.</p>
       </div>
       <div class="values">
-        <div class="value"><h3>Player-first</h3><p>Fair games with no pay-to-win. Fun comes first, and ads stay out of the way.</p></div>
-        <div class="value"><h3>Privacy by default</h3><p>We collect only what we need to run and improve our products, and we never sell personal data.</p></div>
-        <div class="value"><h3>Real support</h3><p>Every message reaches the people who build the product. We aim to reply within 2 business days.</p></div>
+        <div class="value reveal">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01"/><rect x="2" y="6" width="20" height="12" rx="4"/></svg></div>
+          <h3>Player-first</h3>
+          <p>Fair games with no pay-to-win. Fun comes first, always.</p>
+        </div>
+        <div class="value reveal">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Privacy by default</h3>
+          <p>We collect only what we need to run our products, and we never sell personal data.</p>
+        </div>
+        <div class="value reveal">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.14L4 20.5l1.36-4.6A8 8 0 1 1 21 12z"/></svg></div>
+          <h3>Real support</h3>
+          <p>Every message reaches the people who build the product. We aim to reply within 2 business days.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="contact">
+  <!-- contact -->
+  <section class="section" id="contact">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Contact</span>
-        <h2>Talk to us</h2>
-        <p>Questions, bug reports, partnerships or press: we read everything.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-card"><h3>General &amp; support</h3><p>Help with any of our products.</p><a href="mailto:hello@omgbbqhax.dev">hello@omgbbqhax.dev</a></div>
-        <div class="contact-card"><h3>Help center</h3><p>FAQs, account help and data requests.</p><a href="support.html">Visit support →</a></div>
-        <div class="contact-card"><h3>Company</h3><p>OMGBBQHAX LLC<br>8 The Green, STE A<br>Dover, DE 19901, USA</p><a href="mailto:hello@omgbbqhax.dev">hello@omgbbqhax.dev</a></div>
-        <div class="contact-card"><h3>Community</h3><p>Chat with players and the team.</p><a href="https://discord.gg/yCgdm2uQ" target="_blank" rel="noopener">Join our Discord →</a></div>
+      <div class="cta reveal">
+        <div class="blob b1"></div><div class="blob b2"></div>
+        <div>
+          <span class="eyebrow" style="color:#ff8a5c">Contact</span>
+          <h2>Let's talk.</h2>
+          <p>Questions, bug reports, partnerships or press: we read everything.</p>
+          <div class="actions">
+            <a class="btn btn-glow" href="mailto:hello@omgbbqhax.dev">Email us</a>
+            <a class="btn btn-ghost-dark" href="support.html">Help center</a>
+          </div>
+        </div>
+        <div class="contact-list">
+          <a class="contact-item" href="mailto:hello@omgbbqhax.dev"><small>Email</small><span>hello@omgbbqhax.dev</span></a>
+          <a class="contact-item" href="https://discord.gg/yCgdm2uQ" target="_blank" rel="noopener"><small>Community</small><span>Join our Discord →</span></a>
+          <div class="contact-item"><small>Company</small><address>OMGBBQHAX LLC<br>8 The Green, STE A<br>Dover, DE 19901, USA</address></div>
+        </div>
       </div>
     </div>
   </section>
@@ -172,8 +220,22 @@
       <div class="footer-col"><h4>Company</h4><a href="#about">About</a><a href="#contact">Contact</a><a href="support.html">Support</a></div>
       <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
     </div>
-    <p class="copyright">© 2026 OMGBBQHAX LLC. All rights reserved. · 8 The Green, STE A, Dover, DE 19901, USA · <a href="mailto:hello@omgbbqhax.dev">hello@omgbbqhax.dev</a></p>
+    <p class="copyright">© 2026 OMGBBQHAX LLC. All rights reserved. · 8 The Green, STE A, Dover, DE 19901, USA</p>
   </div>
 </footer>
+
+<script>
+  // header turns light once past the dark hero
+  const header = document.getElementById('header');
+  const hero = document.querySelector('.hero');
+  const onScroll = () => header.classList.toggle('is-light', scrollY > hero.offsetHeight - 70);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+</script>
 </body>
 </html>
