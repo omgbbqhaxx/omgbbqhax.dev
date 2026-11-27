@@ -261,3 +261,124 @@ img { height: auto; }
 .brand-mark { background: none !important; box-shadow: 0 4px 14px -4px rgba(168,85,247,.6) !important; border-radius: 9px; }
 .brand-mark { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 4px 16px -4px rgba(168,85,247,.55) !important; }
 .brand-mark { width: auto !important; height: 32px !important; border-radius: 0 !important; box-shadow: none !important; background: none !important; }
+
+/* =========================================================
+   LOGO THEME — spectrum + complex plane (zeta, Re(s) = ½)
+   ========================================================= */
+:root {
+  --s-red: #ff3b1f; --s-orange: #ff8a00; --s-yellow: #ffd60a; --s-green: #22c55e;
+  --s-cyan: #06b6d4; --s-blue: #2f6bff; --s-violet: #8b3cff;
+  --spectrum: linear-gradient(90deg, var(--s-red), var(--s-orange) 17%, var(--s-yellow) 34%, var(--s-green) 51%, var(--s-cyan) 67%, var(--s-blue) 83%, var(--s-violet));
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+  --night: #07070b;
+}
+a { color: var(--s-blue); }
+.hero, .cta { background: var(--night); }
+
+/* complex-plane grid: finer minor + major lines */
+.hero::before {
+  background-image:
+    linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+  background-position: center center;
+}
+
+/* spectral glows, softer, arranged like the logo's colors */
+.blob { mix-blend-mode: screen; filter: blur(110px); }
+.hero .blob.b1 { background: var(--s-red);    opacity: .28; top: 6%;  left: 4%;  width: 420px; height: 420px; }
+.hero .blob.b5 { background: var(--s-yellow); opacity: .16; top: -10%; left: 38%; width: 380px; height: 380px; }
+.hero .blob.b4 { background: var(--s-green);  opacity: .16; top: 30%; right: 22%; bottom: auto; width: 320px; height: 320px; }
+.hero .blob.b3 { background: var(--s-blue);   opacity: .30; top: 20%; right: 2%; bottom: auto; left: auto; width: 440px; height: 440px; }
+.hero .blob.b2 { background: var(--s-violet); opacity: .26; top: auto; bottom: -12%; left: 22%; right: auto; width: 460px; height: 460px; }
+
+/* hero mark: the logo, with its real axis extended across the screen */
+.hero { padding-top: 120px; }
+.hero-mark { position: relative; width: min(600px, 92%); margin: 6px auto 34px; }
+.hero-mark img { position: relative; z-index: 2; width: 100%; filter: drop-shadow(0 0 40px rgba(255,140,40,.25)) drop-shadow(0 0 60px rgba(60,110,255,.25)); animation: breathe 7s ease-in-out infinite; }
+@keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.015); } }
+.hero-mark .axis {
+  position: absolute; z-index: 1; top: 52.4%; left: -60vw; right: -60vw; height: 1px; transform: translateY(-.5px);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.55) 30%, rgba(255,255,255,.55) 70%, transparent);
+}
+.hero-mark .axis::after { /* zeros on the axis */
+  content: ""; position: absolute; left: 0; right: 0; top: -3px; height: 7px;
+  background: radial-gradient(circle, rgba(255,255,255,.9) 2.2px, transparent 3px) center / 72px 7px repeat-x;
+  -webkit-mask-image: linear-gradient(90deg, transparent 22%, #000 38%, #000 62%, transparent 78%);
+  mask-image: linear-gradient(90deg, transparent 22%, #000 38%, #000 62%, transparent 78%);
+}
+.hero-mark .crit, .hero-mark .origin { position: absolute; z-index: 3; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: rgba(255,255,255,.55); white-space: nowrap; }
+.hero-mark .crit { left: calc(49.9% + 10px); top: -2px; }
+.hero-mark .origin { left: calc(49.9% + 12px); top: calc(52.4% + 10px); color: rgba(255,255,255,.7); }
+
+.hero h1 { font-size: clamp(40px, 6.6vw, 80px); }
+.grad { background: var(--spectrum); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.pill { font-family: var(--mono); font-size: 12px; letter-spacing: .02em; }
+.pill .dot { background: var(--s-green); box-shadow: 0 0 0 4px rgba(34,197,94,.2); }
+.makers span { font-family: var(--mono); }
+
+/* spectrum edge (like the ribbon) */
+.hero::after { background: var(--spectrum); background-size: 100% 100%; animation: none; height: 2px; box-shadow: 0 0 22px 2px rgba(255,214,10,.25), 0 0 30px 4px rgba(47,107,255,.25); }
+
+/* buttons: white core, spectral rim + glow */
+.btn-glow {
+  color: #0b0a0f; border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, var(--spectrum) border-box;
+  box-shadow: -14px 8px 34px -12px rgba(255,59,31,.55), 14px 8px 34px -12px rgba(47,107,255,.6);
+}
+.btn-glow:hover { box-shadow: -14px 10px 40px -10px rgba(255,59,31,.7), 14px 10px 40px -10px rgba(47,107,255,.75); }
+
+/* math-style labels */
+.eyebrow { font-family: var(--mono); font-weight: 600; letter-spacing: .08em; background: var(--spectrum); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cta .eyebrow { color: transparent !important; }
+
+/* stats: each number takes a color from the ribbon */
+.stats { position: relative; }
+.stats strong { background-clip: text; -webkit-background-clip: text; color: transparent; }
+.stats li:nth-child(1) strong { background-image: linear-gradient(90deg, var(--s-red), var(--s-orange)); }
+.stats li:nth-child(2) strong { background-image: linear-gradient(90deg, var(--s-orange), var(--s-yellow)); }
+.stats li:nth-child(3) strong { background-image: linear-gradient(90deg, var(--s-green), var(--s-cyan)); }
+.stats li:nth-child(4) strong { background-image: linear-gradient(90deg, var(--s-blue), var(--s-violet)); }
+.stats span { font-family: var(--mono); font-size: 12.5px; letter-spacing: .02em; }
+
+/* light sections get the faint plane grid too */
+.section-alt { background-color: #f7f6f3; background-image: linear-gradient(rgba(0,0,0,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.035) 1px, transparent 1px); background-size: 48px 48px; background-position: center; }
+
+/* value icons in ribbon colors */
+.value .ic svg { stroke: #fff; }
+.value:nth-child(1) .ic { background: linear-gradient(135deg, var(--s-red), var(--s-orange)); }
+.value:nth-child(2) .ic { background: linear-gradient(135deg, var(--s-yellow), var(--s-green)); }
+.value:nth-child(3) .ic { background: linear-gradient(135deg, var(--s-blue), var(--s-violet)); }
+
+/* CTA: spectral glows + zeta watermark */
+.cta .blob.b1 { background: var(--s-red); opacity: .3; }
+.cta .blob.b2 { background: var(--s-violet); opacity: .32; }
+.cta .blob.b3 { background: var(--s-yellow); opacity: .14; }
+.cta .blob.b4 { background: var(--s-cyan); opacity: .2; }
+.zeta-wm { position: absolute; right: -10px; bottom: -70px; z-index: -1; font-family: "Times New Roman", Georgia, serif; font-style: italic; font-size: 280px; line-height: 1; color: rgba(255,255,255,.04); pointer-events: none; user-select: none; }
+
+/* footer: ribbon line */
+.site-footer { border-top: 0; position: relative; }
+.site-footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--spectrum); }
+.copyright { font-family: var(--mono); font-size: 12px; }
+.footer-col h4 { font-family: var(--mono); }
+
+/* legal pages */
+.doc h1 { background: linear-gradient(90deg, var(--ink) 55%, var(--s-violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.doc .updated { font-family: var(--mono); font-size: 13px; }
+
+@media (max-width: 640px) {
+  .hero-mark .crit, .hero-mark .origin { font-size: 10px; }
+  .hero-mark .axis::after { background-size: 48px 7px; }
+  .zeta-wm { font-size: 180px; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-mark img { animation: none; } }
+/* zeros only outside the logo (logo already draws its own) */
+.hero-mark .axis::after { display: none; }
+.hero-mark .zeros { position: absolute; z-index: 1; top: calc(52.4% - 3.5px); height: 7px; width: 60vw;
+  background: radial-gradient(circle, rgba(255,255,255,.85) 2.2px, transparent 3px) 0 0 / 72px 7px repeat-x; }
+.hero-mark .zeros.l { right: 100%; background-position: right 0 center; -webkit-mask-image: linear-gradient(90deg, transparent 40%, #000); mask-image: linear-gradient(90deg, transparent 40%, #000); }
+.hero-mark .zeros.r { left: 100%; background-position: left 0 center; -webkit-mask-image: linear-gradient(270deg, transparent 40%, #000); mask-image: linear-gradient(270deg, transparent 40%, #000); }
+@media (max-width: 640px) { .hero-mark .zeros { background-size: 48px 7px; } }
