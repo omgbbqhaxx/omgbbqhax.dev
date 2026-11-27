@@ -382,3 +382,56 @@ a { color: var(--s-blue); }
 .hero-mark .zeros.l { right: 100%; background-position: right 0 center; -webkit-mask-image: linear-gradient(90deg, transparent 40%, #000); mask-image: linear-gradient(90deg, transparent 40%, #000); }
 .hero-mark .zeros.r { left: 100%; background-position: left 0 center; -webkit-mask-image: linear-gradient(270deg, transparent 40%, #000); mask-image: linear-gradient(270deg, transparent 40%, #000); }
 @media (max-width: 640px) { .hero-mark .zeros { background-size: 48px 7px; } }
+
+/* ---------- products orbiting the hero ---------- */
+.orbit { display: none; }
+@media (min-width: 1120px) {
+  .hero .container { position: static; }
+  .orbit { display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .orb {
+    position: absolute; pointer-events: auto; width: 210px; text-decoration: none; color: #fff;
+    border-radius: 22px; padding: 8px; background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 30px 60px -24px rgba(0,0,0,.7);
+    transition: transform .4s cubic-bezier(.2,.8,.2,1), border-color .3s, background .3s;
+    animation: orbFloat 9s ease-in-out infinite;
+  }
+  .orb:hover { border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.1); animation-play-state: paused; transform: translateY(-6px) rotate(0deg) !important; }
+  .orb::before { /* spectral rim on hover */
+    content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; background: var(--spectrum); opacity: 0; transition: opacity .3s;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+  .orb:hover::before { opacity: 1; }
+  .orb-media { display: block; border-radius: 15px; overflow: hidden; }
+  .orb-media img { width: 100%; height: 100%; object-fit: cover; }
+  .orb-label { display: flex; align-items: center; gap: 10px; padding: 10px 6px 4px; text-align: left; }
+  .orb-label > img { width: 28px; height: 28px; border-radius: 7px; background: #fff; object-fit: cover; }
+  .orb-label > img.contain { object-fit: contain; padding: 3px; }
+  .orb-label b { display: block; font-size: 14.5px; line-height: 1.2; }
+  .orb-label small { display: block; font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,.55); }
+
+  .orb-bitfight { left: max(28px, calc(50% - 610px)); top: 170px; transform: rotate(-5deg); }
+  .orb-bitfight .orb-media { height: 290px; background: linear-gradient(160deg, #1b2436, #0e131d); }
+  .orb-bitfight .orb-media img { object-position: top; }
+
+  .orb-flooor { right: max(28px, calc(50% - 610px)); top: 150px; transform: rotate(4deg); animation-delay: -3s; }
+  .orb-flooor .orb-media { height: 130px; background: #eceef2; display: grid; place-items: center; }
+  .orb-flooor .orb-media img { width: 78%; height: auto; object-fit: contain; }
+
+  .orb-bblock { right: max(60px, calc(50% - 560px)); top: 470px; transform: rotate(-3deg); animation-delay: -6s; }
+  .orb-bblock .orb-media { height: 170px; }
+
+  @keyframes orbFloat { 0%,100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+  .hero .makers { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .orb { animation: none; } }
+@media (min-width: 1120px) and (max-width: 1359px) {
+  .orb { width: 165px; padding: 7px; }
+  .orb-label b { font-size: 13px; }
+  .orb-bitfight { left: 18px; top: 180px; }
+  .orb-bitfight .orb-media { height: 230px; }
+  .orb-flooor { right: 18px; top: 150px; }
+  .orb-flooor .orb-media { height: 100px; }
+  .orb-bblock { right: 24px; top: 420px; }
+  .orb-bblock .orb-media { height: 130px; }
+}
