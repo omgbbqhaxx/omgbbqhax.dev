@@ -230,3 +230,25 @@ details[open] summary { margin-bottom: 10px; }
 img { height: auto; }
 .c-flooor .visual img { -webkit-mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 62%, transparent 100%); }
 .mold img { border-radius: 10px; }
+
+/* ---------- Siri-style palette ---------- */
+.blob { filter: blur(90px); mix-blend-mode: screen; animation-duration: 16s; }
+.blob.b1 { background: #ff2d95; opacity: .55; }
+.blob.b2 { background: #8b5cf6; opacity: .6; }
+.blob.b3 { background: #2f6bff; opacity: .55; }
+.blob.b4 { width: 380px; height: 380px; background: #22d3ee; bottom: -120px; right: 8%; opacity: .45; animation-delay: -3s; }
+.blob.b5 { width: 340px; height: 340px; background: #ff9f40; top: 30%; left: 10%; opacity: .35; animation-delay: -9s; }
+.hero::after { /* Siri edge glow */
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 1;
+  background: linear-gradient(90deg, #ff9f40, #ff2d95, #a855f7, #3b82f6, #22d3ee, #ff2d95, #ff9f40);
+  background-size: 200% 100%; animation: siri 6s linear infinite;
+  box-shadow: 0 0 24px 4px rgba(168,85,247,.55);
+}
+@keyframes siri { to { background-position: 200% 0; } }
+.grad { background: linear-gradient(90deg, #ff9f40 0%, #ff2d95 30%, #a855f7 55%, #3b82f6 78%, #22d3ee 100%); -webkit-background-clip: text; background-clip: text; }
+.btn-glow { background: linear-gradient(120deg, #ff2d95, #a855f7 50%, #3b82f6); box-shadow: 0 10px 30px -10px rgba(168,85,247,.85); }
+.cta .blob.b3 { width: 360px; height: 360px; top: -120px; bottom: auto; left: auto; right: 20%; }
+.cta .blob.b4 { width: 320px; height: 320px; bottom: -160px; right: auto; left: 30%; }
+.cta .eyebrow { color: #c4a6ff !important; }
+@media (prefers-reduced-motion: reduce) { .hero::after { animation: none; } }
+.brand-mark { background: linear-gradient(135deg, #ff9f40, #ff2d95 35%, #a855f7 65%, #3b82f6); box-shadow: 0 4px 14px -4px rgba(168,85,247,.7); }
